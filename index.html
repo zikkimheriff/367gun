@@ -3,42 +3,819 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>367.gün – Sezon</title>
+<title>367.gün</title>
+
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
-    padding: 20px;
+body{
+    margin:0;
+    font-family:Segoe UI, Arial, sans-serif;
+    background:
+        radial-gradient(circle at top,#1f2937,#0f172a),
+        linear-gradient(120deg,#0b1220,#111827);
+    color:#e5e7eb;
+    padding:20px;
 }
-.container {
-    max-width: 900px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
+
+.container{ max-width:1000px; margin:auto; }
+
+h1{
+    text-align:center;
+    font-weight:700;
+    letter-spacing:1px;
+    background: linear-gradient(90deg,#fbbf24,#f59e0b,#d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
-h1, h2, h3 {
-    text-align: center;
+
+h2{
+    color:#60a5fa;
+    border-left:4px solid #3b82f6;
+    padding-left:10px;
+    margin-top:30px;
 }
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+    background:rgba(17,24,39,0.75);
+    backdrop-filter:blur(6px);
+    border-radius:10px;
+    overflow:hidden;
 }
-th {
-    background: #222;
-    color: white;
+
+th{
+    background:#1e293b;
+    color:#93c5fd;
+    padding:10px;
+    border-bottom:1px solid #334155;
 }
-td, th {
-    padding: 8px;
-    border: 1px solid #ccc;
-    text-align: center;
+
+td{ padding:8px; text-align:center; }
+
+tr:nth-child(even){ background:rgba(255,255,255,0.04); }
+tr:nth-child(odd){ background:rgba(0,0,0,0.15); }
+
+tr:hover{ background:rgba(96,165,250,0.12); }
+
+.pos{ color:#22c55e; font-weight:600; }
+.neg{ color:#ef4444; font-weight:600; }
+
+/* accordion */
+
+.accordion{
+    background:#1e293b;
+    color:#e5e7eb;
+    cursor:pointer;
+    padding:12px;
+    width:100%;
+    border:none;
+    text-align:left;
+    margin-top:12px;
+    border-radius:6px;
+    font-size:15px;
 }
-tr:nth-child(even) {
-    background: #f2f2f2;
+
+.accordion:hover{ background:#334155; }
+
+.panel{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.25s ease-out;
 }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>367.gün</h1><h2>Sezon 1 Özeti</h2><table><tr><th>Sıra</th><th>Oyuncu</th><th>Toplam Puan</th><th>Attığı</th><th>Yediği</th><th>Ortalama</th></tr><tr><td>1</td><td>zıkkımheriff</td><td>11.25</td><td>10</td><td>5</td><td>5.62</td></tr><tr><td>2</td><td>*Phoboss*</td><td>11.05</td><td>10</td><td>5</td><td>5.53</td></tr><tr><td>3</td><td>Majestic</td><td>11.0</td><td>11</td><td>5</td><td>5.5</td></tr><tr><td>4</td><td>Tracham</td><td>10.95</td><td>9</td><td>6</td><td>5.47</td></tr><tr><td>5</td><td>Exmilitary</td><td>10.8</td><td>10</td><td>5</td><td>5.4</td></tr><tr><td>6</td><td>***MAREŞAL***</td><td>10.75</td><td>9</td><td>6</td><td>5.38</td></tr><tr><td>7</td><td>KEOMA IZMIR</td><td>10.5</td><td>10</td><td>5</td><td>5.25</td></tr><tr><td>8</td><td>gandalf</td><td>10.1</td><td>9</td><td>6</td><td>5.05</td></tr><tr><td>9</td><td>BasarACR</td><td>10.0</td><td>8</td><td>5</td><td>5.0</td></tr><tr><td>10</td><td>Samedov⚔️</td><td>9.3</td><td>10</td><td>6</td><td>4.65</td></tr><tr><td>11</td><td>MrZenor</td><td>8.899999999999999</td><td>8</td><td>6</td><td>4.45</td></tr><tr><td>12</td><td>legolas</td><td>8.6</td><td>9</td><td>6</td><td>4.3</td></tr><tr><td>13</td><td>Büyükelçi_74</td><td>7.7</td><td>9</td><td>6</td><td>3.85</td></tr><tr><td>14</td><td>Aryan</td><td>7.699999999999999</td><td>8</td><td>6</td><td>3.85</td></tr><tr><td>15</td><td>OnurKarabel</td><td>7.6</td><td>8</td><td>6</td><td>3.8</td></tr><tr><td>16</td><td>The Onder</td><td>7.6</td><td>8</td><td>5</td><td>3.8</td></tr><tr><td>17</td><td>KRAL43</td><td>6.9</td><td>8</td><td>6</td><td>3.45</td></tr><tr><td>18</td><td>BurningBlood</td><td>6.85</td><td>7</td><td>5</td><td>3.42</td></tr><tr><td>19</td><td>KONDU</td><td>6.800000000000001</td><td>8</td><td>6</td><td>3.4</td></tr><tr><td>20</td><td>risk30</td><td>6.199999999999999</td><td>7</td><td>5</td><td>3.1</td></tr><tr><td>21</td><td>VIPER</td><td>6.199999999999999</td><td>7</td><td>6</td><td>3.1</td></tr><tr><td>22</td><td>imparator</td><td>5.3</td><td>7</td><td>6</td><td>2.65</td></tr><tr><td>23</td><td>JDLAK</td><td>4.7</td><td>4</td><td>3</td><td>4.7</td></tr><tr><td>24</td><td>blackknigt</td><td>3.0</td><td>5</td><td>5</td><td>1.5</td></tr><tr><td>25</td><td>Alakazum</td><td>2.4</td><td>3</td><td>3</td><td>2.4</td></tr><tr><td>26</td><td>Elfishus</td><td>1.75</td><td>3</td><td>5</td><td>0.88</td></tr><tr><td>27</td><td>NamelessWarior</td><td>1.6</td><td>4</td><td>5</td><td>0.8</td></tr><tr><td>28</td><td>N.K.G.</td><td>-2</td><td>0</td><td>3</td><td>-2.0</td></tr><tr><td>29</td><td>sono</td><td>-2</td><td>0</td><td>3</td><td>-2.0</td></tr><tr><td>30</td><td>A V C 1</td><td>-2</td><td>0</td><td>3</td><td>-2.0</td></tr></table><h3>Savaş 1</h3><table><tr><th>Oyuncu</th><th>Puan</th><th>Attığı</th><th>Yediği</th></tr><tr><td>Büyükelçi_74</td><td>4.5</td><td>5</td><td>3</td></tr><tr><td>blackknigt</td><td>-2</td><td>0</td><td>2</td></tr><tr><td>OnurKarabel</td><td>5.0</td><td>5</td><td>3</td></tr><tr><td>BasarACR</td><td>6.25</td><td>5</td><td>2</td></tr><tr><td>risk30</td><td>3.8</td><td>4</td><td>2</td></tr><tr><td>BurningBlood</td><td>2.95</td><td>3</td><td>2</td></tr><tr><td>imparator</td><td>4.7</td><td>5</td><td>3</td></tr><tr><td>NamelessWarior</td><td>1.0</td><td>2</td><td>2</td></tr><tr><td>KEOMA IZMIR</td><td>6.0</td><td>6</td><td>2</td></tr><tr><td>Elfishus</td><td>3.75</td><td>3</td><td>2</td></tr><tr><td>Majestic</td><td>6.0</td><td>6</td><td>2</td></tr><tr><td>***MAREŞAL***</td><td>5.95</td><td>5</td><td>3</td></tr><tr><td>MrZenor</td><td>4.6</td><td>4</td><td>3</td></tr><tr><td>KRAL43</td><td>4.5</td><td>5</td><td>3</td></tr><tr><td>Aryan</td><td>3.8</td><td>4</td><td>3</td></tr><tr><td>KONDU</td><td>3.6</td><td>4</td><td>3</td></tr><tr><td>VIPER</td><td>3.8</td><td>4</td><td>3</td></tr><tr><td>*Phoboss*</td><td>6.75</td><td>6</td><td>2</td></tr><tr><td>Samedov⚔️</td><td>5.7</td><td>6</td><td>3</td></tr><tr><td>legolas</td><td>5.0</td><td>5</td><td>3</td></tr><tr><td>Tracham</td><td>5.95</td><td>5</td><td>3</td></tr><tr><td>Exmilitary</td><td>5.3</td><td>5</td><td>2</td></tr><tr><td>zıkkımheriff</td><td>6.75</td><td>6</td><td>2</td></tr><tr><td>gandalf</td><td>4.8</td><td>4</td><td>3</td></tr><tr><td>The Onder</td><td>3.8</td><td>4</td><td>2</td></tr></table><h3>Savaş 2</h3><table><tr><th>Oyuncu</th><th>Puan</th><th>Attığı</th><th>Yediği</th></tr><tr><td>Büyükelçi_74</td><td>3.2</td><td>4</td><td>3</td></tr><tr><td>blackknigt</td><td>5.0</td><td>5</td><td>3</td></tr><tr><td>OnurKarabel</td><td>2.6</td><td>3</td><td>3</td></tr><tr><td>BasarACR</td><td>3.75</td><td>3</td><td>3</td></tr><tr><td>N.K.G.</td><td>-2</td><td>0</td><td>3</td></tr><tr><td>risk30</td><td>2.4</td><td>3</td><td>3</td></tr><tr><td>BurningBlood</td><td>3.9</td><td>4</td><td>3</td></tr><tr><td>imparator</td><td>0.6</td><td>2</td><td>3</td></tr><tr><td>NamelessWarior</td><td>0.6</td><td>2</td><td>3</td></tr><tr><td>KEOMA IZMIR</td><td>4.5</td><td>4</td><td>3</td></tr><tr><td>Elfishus</td><td>-2</td><td>0</td><td>3</td></tr><tr><td>Majestic</td><td>5.0</td><td>5</td><td>3</td></tr><tr><td>***MAREŞAL***</td><td>4.8</td><td>4</td><td>3</td></tr><tr><td>MrZenor</td><td>4.3</td><td>4</td><td>3</td></tr><tr><td>KRAL43</td><td>2.4</td><td>3</td><td>3</td></tr><tr><td>Alakazum</td><td>2.4</td><td>3</td><td>3</td></tr><tr><td>Aryan</td><td>3.9</td><td>4</td><td>3</td></tr><tr><td>sono</td><td>-2</td><td>0</td><td>3</td></tr><tr><td>KONDU</td><td>3.2</td><td>4</td><td>3</td></tr><tr><td>JDLAK</td><td>4.7</td><td>4</td><td>3</td></tr><tr><td>VIPER</td><td>2.4</td><td>3</td><td>3</td></tr><tr><td>*Phoboss*</td><td>4.3</td><td>4</td><td>3</td></tr><tr><td>Samedov⚔️</td><td>3.6</td><td>4</td><td>3</td></tr><tr><td>A V C 1</td><td>-2</td><td>0</td><td>3</td></tr><tr><td>legolas</td><td>3.6</td><td>4</td><td>3</td></tr><tr><td>Tracham</td><td>5.0</td><td>4</td><td>3</td></tr><tr><td>Exmilitary</td><td>5.5</td><td>5</td><td>3</td></tr><tr><td>zıkkımheriff</td><td>4.5</td><td>4</td><td>3</td></tr><tr><td>gandalf</td><td>5.3</td><td>5</td><td>3</td></tr><tr><td>The Onder</td><td>3.8</td><td>4</td><td>3</td></tr></table></div></body></html>
+<h1>367.gün</h1><h2>Sezon Özeti</h2>
+<table>
+<tr>
+<th>Sıra</th>
+<th>Oyuncu</th>
+<th>Toplam Puan</th>
+<th>Kazanılan Yıldız</th>
+<th>Kaybedilen Yıldız</th>
+<th>Katıldığı Savaş</th>
+<th>Ortalama Puan</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>zıkkımheriff</td>
+<td class="pos">11.25</td>
+<td>10</td>
+<td>5</td>
+<td>2</td>
+<td>5.62</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>*Phoboss*</td>
+<td class="pos">11.05</td>
+<td>10</td>
+<td>5</td>
+<td>2</td>
+<td>5.53</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Majestic</td>
+<td class="pos">11.00</td>
+<td>11</td>
+<td>5</td>
+<td>2</td>
+<td>5.50</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Tracham</td>
+<td class="pos">10.95</td>
+<td>9</td>
+<td>6</td>
+<td>2</td>
+<td>5.47</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Exmilitary</td>
+<td class="pos">10.80</td>
+<td>10</td>
+<td>5</td>
+<td>2</td>
+<td>5.40</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>***MAREŞAL***</td>
+<td class="pos">10.75</td>
+<td>9</td>
+<td>6</td>
+<td>2</td>
+<td>5.38</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>KEOMA IZMIR</td>
+<td class="pos">10.50</td>
+<td>10</td>
+<td>5</td>
+<td>2</td>
+<td>5.25</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>gandalf</td>
+<td class="pos">10.10</td>
+<td>9</td>
+<td>6</td>
+<td>2</td>
+<td>5.05</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>BasarACR</td>
+<td class="pos">10.00</td>
+<td>8</td>
+<td>5</td>
+<td>2</td>
+<td>5.00</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Samedov⚔️</td>
+<td class="pos">9.30</td>
+<td>10</td>
+<td>6</td>
+<td>2</td>
+<td>4.65</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>MrZenor</td>
+<td class="pos">8.90</td>
+<td>8</td>
+<td>6</td>
+<td>2</td>
+<td>4.45</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>legolas</td>
+<td class="pos">8.60</td>
+<td>9</td>
+<td>6</td>
+<td>2</td>
+<td>4.30</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>Büyükelçi_74</td>
+<td class="pos">7.70</td>
+<td>9</td>
+<td>6</td>
+<td>2</td>
+<td>3.85</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>Aryan</td>
+<td class="pos">7.70</td>
+<td>8</td>
+<td>6</td>
+<td>2</td>
+<td>3.85</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>OnurKarabel</td>
+<td class="pos">7.60</td>
+<td>8</td>
+<td>6</td>
+<td>2</td>
+<td>3.80</td>
+</tr>
+
+<tr>
+<td>16</td>
+<td>The Onder</td>
+<td class="pos">7.60</td>
+<td>8</td>
+<td>5</td>
+<td>2</td>
+<td>3.80</td>
+</tr>
+
+<tr>
+<td>17</td>
+<td>KRAL43</td>
+<td class="pos">6.90</td>
+<td>8</td>
+<td>6</td>
+<td>2</td>
+<td>3.45</td>
+</tr>
+
+<tr>
+<td>18</td>
+<td>BurningBlood</td>
+<td class="pos">6.85</td>
+<td>7</td>
+<td>5</td>
+<td>2</td>
+<td>3.42</td>
+</tr>
+
+<tr>
+<td>19</td>
+<td>KONDU</td>
+<td class="pos">6.80</td>
+<td>8</td>
+<td>6</td>
+<td>2</td>
+<td>3.40</td>
+</tr>
+
+<tr>
+<td>20</td>
+<td>risk30</td>
+<td class="pos">6.20</td>
+<td>7</td>
+<td>5</td>
+<td>2</td>
+<td>3.10</td>
+</tr>
+
+<tr>
+<td>21</td>
+<td>VIPER</td>
+<td class="pos">6.20</td>
+<td>7</td>
+<td>6</td>
+<td>2</td>
+<td>3.10</td>
+</tr>
+
+<tr>
+<td>22</td>
+<td>imparator</td>
+<td class="pos">5.30</td>
+<td>7</td>
+<td>6</td>
+<td>2</td>
+<td>2.65</td>
+</tr>
+
+<tr>
+<td>23</td>
+<td>JDLAK</td>
+<td class="pos">4.70</td>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>4.70</td>
+</tr>
+
+<tr>
+<td>24</td>
+<td>blackknigt</td>
+<td class="pos">3.00</td>
+<td>5</td>
+<td>5</td>
+<td>2</td>
+<td>1.50</td>
+</tr>
+
+<tr>
+<td>25</td>
+<td>Alakazum</td>
+<td class="pos">2.40</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>2.40</td>
+</tr>
+
+<tr>
+<td>26</td>
+<td>Elfishus</td>
+<td class="pos">1.75</td>
+<td>3</td>
+<td>5</td>
+<td>2</td>
+<td>0.88</td>
+</tr>
+
+<tr>
+<td>27</td>
+<td>NamelessWarior</td>
+<td class="pos">1.60</td>
+<td>4</td>
+<td>5</td>
+<td>2</td>
+<td>0.80</td>
+</tr>
+
+<tr>
+<td>28</td>
+<td>N.K.G.</td>
+<td class="neg">-2.00</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>-2.00</td>
+</tr>
+
+<tr>
+<td>29</td>
+<td>sono</td>
+<td class="neg">-2.00</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>-2.00</td>
+</tr>
+
+<tr>
+<td>30</td>
+<td>A V C 1</td>
+<td class="neg">-2.00</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>-2.00</td>
+</tr>
+</table><button class="accordion">Savaş 1</button><div class="panel">
+<table>
+<tr>
+<th>Oyuncu</th>
+<th>Toplam Puan</th>
+<th>Kazanılan Yıldız</th>
+<th>Kaybedilen Yıldız</th>
+</tr>
+
+<tr>
+<td>Büyükelçi_74</td>
+<td class="pos">4.50</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>blackknigt</td>
+<td class="neg">-2.00</td>
+<td>0</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>OnurKarabel</td>
+<td class="pos">5.00</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>BasarACR</td>
+<td class="pos">6.25</td>
+<td>5</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>risk30</td>
+<td class="pos">3.80</td>
+<td>4</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>BurningBlood</td>
+<td class="pos">2.95</td>
+<td>3</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>imparator</td>
+<td class="pos">4.70</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>NamelessWarior</td>
+<td class="pos">1.00</td>
+<td>2</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>KEOMA IZMIR</td>
+<td class="pos">6.00</td>
+<td>6</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>Elfishus</td>
+<td class="pos">3.75</td>
+<td>3</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>Majestic</td>
+<td class="pos">6.00</td>
+<td>6</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>***MAREŞAL***</td>
+<td class="pos">5.95</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>MrZenor</td>
+<td class="pos">4.60</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>KRAL43</td>
+<td class="pos">4.50</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Aryan</td>
+<td class="pos">3.80</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>KONDU</td>
+<td class="pos">3.60</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>VIPER</td>
+<td class="pos">3.80</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>*Phoboss*</td>
+<td class="pos">6.75</td>
+<td>6</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>Samedov⚔️</td>
+<td class="pos">5.70</td>
+<td>6</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>legolas</td>
+<td class="pos">5.00</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Tracham</td>
+<td class="pos">5.95</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Exmilitary</td>
+<td class="pos">5.30</td>
+<td>5</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>zıkkımheriff</td>
+<td class="pos">6.75</td>
+<td>6</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>gandalf</td>
+<td class="pos">4.80</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>The Onder</td>
+<td class="pos">3.80</td>
+<td>4</td>
+<td>2</td>
+</tr>
+</table></div><button class="accordion">Savaş 2</button><div class="panel">
+<table>
+<tr>
+<th>Oyuncu</th>
+<th>Toplam Puan</th>
+<th>Kazanılan Yıldız</th>
+<th>Kaybedilen Yıldız</th>
+</tr>
+
+<tr>
+<td>Büyükelçi_74</td>
+<td class="pos">3.20</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>blackknigt</td>
+<td class="pos">5.00</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>OnurKarabel</td>
+<td class="pos">2.60</td>
+<td>3</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>BasarACR</td>
+<td class="pos">3.75</td>
+<td>3</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>N.K.G.</td>
+<td class="neg">-2.00</td>
+<td>0</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>risk30</td>
+<td class="pos">2.40</td>
+<td>3</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>BurningBlood</td>
+<td class="pos">3.90</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>imparator</td>
+<td class="pos">0.60</td>
+<td>2</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>NamelessWarior</td>
+<td class="pos">0.60</td>
+<td>2</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>KEOMA IZMIR</td>
+<td class="pos">4.50</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Elfishus</td>
+<td class="neg">-2.00</td>
+<td>0</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Majestic</td>
+<td class="pos">5.00</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>***MAREŞAL***</td>
+<td class="pos">4.80</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>MrZenor</td>
+<td class="pos">4.30</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>KRAL43</td>
+<td class="pos">2.40</td>
+<td>3</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Alakazum</td>
+<td class="pos">2.40</td>
+<td>3</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Aryan</td>
+<td class="pos">3.90</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>sono</td>
+<td class="neg">-2.00</td>
+<td>0</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>KONDU</td>
+<td class="pos">3.20</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>JDLAK</td>
+<td class="pos">4.70</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>VIPER</td>
+<td class="pos">2.40</td>
+<td>3</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>*Phoboss*</td>
+<td class="pos">4.30</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Samedov⚔️</td>
+<td class="pos">3.60</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>A V C 1</td>
+<td class="neg">-2.00</td>
+<td>0</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>legolas</td>
+<td class="pos">3.60</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Tracham</td>
+<td class="pos">5.00</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>Exmilitary</td>
+<td class="pos">5.50</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>zıkkımheriff</td>
+<td class="pos">4.50</td>
+<td>4</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>gandalf</td>
+<td class="pos">5.30</td>
+<td>5</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>The Onder</td>
+<td class="pos">3.80</td>
+<td>4</td>
+<td>3</td>
+</tr>
+</table></div>
+</div>
+
+<script>
+var acc=document.getElementsByClassName("accordion");
+for(let i=0;i<acc.length;i++){
+  acc[i].addEventListener("click",function(){
+    this.classList.toggle("active");
+    let panel=this.nextElementSibling;
+    if(panel.style.maxHeight){
+      panel.style.maxHeight=null;
+    }else{
+      panel.style.maxHeight=panel.scrollHeight+"px";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
