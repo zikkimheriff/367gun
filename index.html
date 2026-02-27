@@ -21,28 +21,13 @@ h1{
     text-align:center;
     font-size:26px;
     margin-bottom:30px;
-    background: linear-gradient(90deg,#fbbf24,#f97316);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
-.info-box{
-    background: rgba(255,255,255,0.05);
-    padding:18px;
+.card{
+    background: rgba(255,255,255,0.04);
     border-radius:12px;
-    border:1px solid rgba(255,255,255,0.08);
-    font-size:13px;
-    margin-bottom:35px;
-}
-.info-box h3{
-    margin-top:0;
-    color:#38bdf8;
-}
-.info-grid{
-    display:flex;
-    gap:40px;
-}
-.info-grid div{
-    flex:1;
+    padding:20px;
+    border:1px solid rgba(255,255,255,0.07);
+    margin-bottom:30px;
 }
 .tabs{
     display:flex;
@@ -63,202 +48,236 @@ h1{
     background:#f97316;
     color:white;
 }
-.card{
-    background: rgba(255,255,255,0.04);
-    border-radius:12px;
-    padding:20px;
-    border:1px solid rgba(255,255,255,0.07);
-    margin-bottom:30px;
-}
 table{
     width:100%;
     border-collapse: collapse;
     margin-top:15px;
     font-size:13px;
 }
-th{
-    background:#1e293b;
-    padding:8px;
-    color:#93c5fd;
-    cursor:pointer;
-    user-select:none;
-}
-th .arrow{
-    font-size:10px;
-    margin-left:5px;
-    opacity:0.6;
-}
-th.asc .arrow::after{ content:"▲"; }
-th.desc .arrow::after{ content:"▼"; }
-th:hover{ background:#334155; }
-td{
+th, td{
     padding:6px;
     text-align:center;
-    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+th{
+    background:#1e293b;
+    cursor:pointer;
 }
 .pos{ color:#22c55e; font-weight:600; }
 .neg{ color:#ef4444; font-weight:600; }
 .penalty{ color:#f97316; font-weight:600; }
-select{
-    padding:6px;
-    border-radius:6px;
-    background:#1e293b;
-    color:white;
-    border:1px solid #334155;
-    margin-top:10px;
+.war-title{
+    cursor:pointer;
+    font-size:16px;
+    margin-bottom:10px;
+    color:#38bdf8;
 }
 </style>
 </head>
 <body>
 <div class="container">
 <h1>Klan Savaş Performans Sistemi</h1>
-<div class='info-box'><h3>Puanlama Sistemi</h3><div class='info-grid'><div><b>Yıldız Puanları</b><br>0 ★ = -0.5<br>1 ★ = 1.0<br>2 ★ = 2.0<br>3 ★ = 3.0<br></div><div><b>Segment Çarpanları</b><br>1-5 → 1.25<br>6-10 → 1.15<br>11-20 → 1.0<br>21-25 → 0.9<br>26-30 → 0.8<br></div><div><b>Cezalar</b><br>Saldırı Hakkı Kullanmama -4</div></div></div><div class='tabs'><button class='tab-btn active' onclick="openSeason(event,'season1')">Sezon 1</button></div><div id='season1' style='display:block'><div class='card'><h2>Sezon Özeti</h2>
-    <table class="sortable">
+<div class='tabs'><button class='tab-btn active' onclick="openSeason(event,'season1')">Sezon 1</button></div><div id='season1' style='display:block'><div class='card'><h2>Sezon Özeti</h2>
+    <table>
     <tr>
-    <th onclick="sortTable(this,0)">Sıra<span class='arrow'></span></th>
-    <th onclick="sortTable(this,1)">Oyuncu<span class='arrow'></span></th>
-    <th class="desc" onclick="sortTable(this,2)">Toplam Puan<span class='arrow'></span></th>
-    <th onclick="sortTable(this,3)">Kazanılan Yıldız<span class='arrow'></span></th>
-    <th onclick="sortTable(this,4)">Kaybedilen Yıldız<span class='arrow'></span></th>
-    <th onclick="sortTable(this,5)">Katıldığı Savaş<span class='arrow'></span></th>
-    <th onclick="sortTable(this,6)">Cezalar<span class='arrow'></span></th>
-    <th onclick="sortTable(this,7)">Ortalama Puan<span class='arrow'></span></th>
+    <th>Sıra</th>
+    <th>Oyuncu</th>
+    <th>Toplam Puan</th>
+    <th>Yıldız</th>
+    <th>Yediği</th>
+    <th>Savaş</th>
+    <th>Ceza</th>
+    <th>Ortalama</th>
     </tr>
     
         <tr>
         <td>1</td>
         <td>zıkkımheriff</td>
-        <td class='pos'>30.00</td>
-        <td>28</td>
+        <td class='pos'>36.75</td>
+        <td>34</td>
         <td>14</td>
-        <td>5</td>
+        <td>6</td>
         <td class='penalty'>0</td>
-        <td>6.00</td>
+        <td>6.12</td>
         </tr>
         
         <tr>
         <td>2</td>
-        <td>Tracham</td>
-        <td class='pos'>26.90</td>
-        <td>24</td>
-        <td>15</td>
-        <td>5</td>
+        <td>Majestic</td>
+        <td class='pos'>31.60</td>
+        <td>33</td>
+        <td>14</td>
+        <td>6</td>
         <td class='penalty'>0</td>
-        <td>5.38</td>
+        <td>5.27</td>
         </tr>
         
         <tr>
         <td>3</td>
-        <td>Majestic</td>
-        <td class='pos'>25.90</td>
-        <td>27</td>
-        <td>13</td>
-        <td>5</td>
+        <td>***MAREŞAL***</td>
+        <td class='pos'>30.63</td>
+        <td>26</td>
+        <td>15</td>
+        <td>6</td>
         <td class='penalty'>0</td>
-        <td>5.18</td>
+        <td>5.10</td>
         </tr>
         
         <tr>
         <td>4</td>
         <td>Exmilitary</td>
-        <td class='pos'>25.60</td>
-        <td>25</td>
+        <td class='pos'>30.60</td>
+        <td>30</td>
         <td>14</td>
-        <td>5</td>
+        <td>6</td>
         <td class='penalty'>0</td>
-        <td>5.12</td>
+        <td>5.10</td>
         </tr>
         
         <tr>
         <td>5</td>
         <td>BasarACR</td>
-        <td class='pos'>25.15</td>
-        <td>21</td>
-        <td>14</td>
-        <td>5</td>
+        <td class='pos'>29.45</td>
+        <td>25</td>
+        <td>15</td>
+        <td>6</td>
         <td class='penalty'>0</td>
-        <td>5.03</td>
+        <td>4.91</td>
         </tr>
         
         <tr>
         <td>6</td>
-        <td>***MAREŞAL***</td>
-        <td class='pos'>23.88</td>
-        <td>20</td>
-        <td>15</td>
-        <td>5</td>
-        <td class='penalty'>0</td>
-        <td>4.78</td>
+        <td>Samedov⚔️</td>
+        <td class='pos'>28.60</td>
+        <td>33</td>
+        <td>14</td>
+        <td>6</td>
+        <td class='penalty'>-3</td>
+        <td>4.77</td>
         </tr>
         
         <tr>
         <td>7</td>
-        <td>Samedov⚔️</td>
-        <td class='pos'>22.90</td>
+        <td>blackknigt</td>
+        <td class='pos'>27.10</td>
         <td>27</td>
         <td>14</td>
-        <td>5</td>
-        <td class='penalty'>-3</td>
-        <td>4.58</td>
+        <td>6</td>
+        <td class='penalty'>0</td>
+        <td>4.52</td>
         </tr>
         
         <tr>
         <td>8</td>
-        <td>The Onder</td>
-        <td class='pos'>20.90</td>
-        <td>21</td>
-        <td>14</td>
-        <td>5</td>
-        <td class='penalty'>0</td>
-        <td>4.18</td>
+        <td>Tracham</td>
+        <td class='pos'>25.20</td>
+        <td>26</td>
+        <td>17</td>
+        <td>6</td>
+        <td class='penalty'>-4</td>
+        <td>4.20</td>
         </tr>
         
         <tr>
         <td>9</td>
-        <td>blackknigt</td>
-        <td class='pos'>19.60</td>
-        <td>21</td>
+        <td>The Onder</td>
+        <td class='pos'>24.90</td>
+        <td>25</td>
         <td>14</td>
-        <td>5</td>
+        <td>6</td>
         <td class='penalty'>0</td>
-        <td>3.92</td>
+        <td>4.15</td>
         </tr>
         
         <tr>
         <td>10</td>
-        <td>KEOMA IZMIR</td>
-        <td class='pos'>18.25</td>
-        <td>20</td>
-        <td>14</td>
-        <td>5</td>
-        <td class='penalty'>-4</td>
-        <td>3.65</td>
+        <td>KONDU</td>
+        <td class='pos'>20.00</td>
+        <td>25</td>
+        <td>15</td>
+        <td>6</td>
+        <td class='penalty'>-2</td>
+        <td>3.33</td>
         </tr>
         
         <tr>
         <td>11</td>
-        <td>*Phoboss*</td>
-        <td class='pos'>17.00</td>
-        <td>20</td>
+        <td>risk30</td>
+        <td class='pos'>19.48</td>
+        <td>23</td>
         <td>13</td>
-        <td>5</td>
-        <td class='penalty'>-5</td>
-        <td>3.40</td>
+        <td>6</td>
+        <td class='penalty'>-1</td>
+        <td>3.25</td>
         </tr>
         
         <tr>
         <td>12</td>
-        <td>KONDU</td>
-        <td class='pos'>15.60</td>
-        <td>20</td>
-        <td>15</td>
-        <td>5</td>
-        <td class='penalty'>-2</td>
-        <td>3.12</td>
+        <td>BurningBlood</td>
+        <td class='pos'>19.05</td>
+        <td>25</td>
+        <td>16</td>
+        <td>6</td>
+        <td class='penalty'>-6</td>
+        <td>3.18</td>
         </tr>
         
         <tr>
         <td>13</td>
+        <td>KEOMA IZMIR</td>
+        <td class='pos'>16.75</td>
+        <td>22</td>
+        <td>16</td>
+        <td>6</td>
+        <td class='penalty'>-8</td>
+        <td>2.79</td>
+        </tr>
+        
+        <tr>
+        <td>14</td>
+        <td>KRAL43</td>
+        <td class='pos'>16.70</td>
+        <td>20</td>
+        <td>15</td>
+        <td>5</td>
+        <td class='penalty'>0</td>
+        <td>3.34</td>
+        </tr>
+        
+        <tr>
+        <td>15</td>
+        <td>*Phoboss*</td>
+        <td class='pos'>16.45</td>
+        <td>23</td>
+        <td>13</td>
+        <td>6</td>
+        <td class='penalty'>-9</td>
+        <td>2.74</td>
+        </tr>
+        
+        <tr>
+        <td>16</td>
+        <td>legolas</td>
+        <td class='pos'>15.90</td>
+        <td>21</td>
+        <td>11</td>
+        <td>5</td>
+        <td class='penalty'>-4</td>
+        <td>3.18</td>
+        </tr>
+        
+        <tr>
+        <td>17</td>
+        <td>sono</td>
+        <td class='pos'>14.50</td>
+        <td>18</td>
+        <td>11</td>
+        <td>4</td>
+        <td class='penalty'>0</td>
+        <td>3.63</td>
+        </tr>
+        
+        <tr>
+        <td>18</td>
         <td>OnurKarabel</td>
         <td class='pos'>14.50</td>
         <td>16</td>
@@ -269,51 +288,73 @@ select{
         </tr>
         
         <tr>
-        <td>14</td>
-        <td>BurningBlood</td>
-        <td class='pos'>14.35</td>
-        <td>20</td>
-        <td>14</td>
-        <td>5</td>
-        <td class='penalty'>-6</td>
-        <td>2.87</td>
-        </tr>
-        
-        <tr>
+        <td>19</td>
+        <td>KUDÜS FATİHİ</td>
+        <td class='pos'>14.40</td>
         <td>15</td>
-        <td>risk30</td>
-        <td class='pos'>14.03</td>
-        <td>18</td>
-        <td>13</td>
-        <td>5</td>
-        <td class='penalty'>-1</td>
-        <td>2.81</td>
-        </tr>
-        
-        <tr>
-        <td>16</td>
-        <td>KRAL43</td>
-        <td class='pos'>13.40</td>
-        <td>16</td>
-        <td>12</td>
-        <td>4</td>
+        <td>9</td>
+        <td>3</td>
         <td class='penalty'>0</td>
-        <td>3.35</td>
+        <td>4.80</td>
         </tr>
         
         <tr>
-        <td>17</td>
-        <td>legolas</td>
-        <td class='pos'>10.90</td>
-        <td>16</td>
-        <td>11</td>
-        <td>4</td>
-        <td class='penalty'>-4</td>
-        <td>2.73</td>
+        <td>20</td>
+        <td>NamelessWarior</td>
+        <td class='pos'>13.90</td>
+        <td>21</td>
+        <td>14</td>
+        <td>6</td>
+        <td class='penalty'>-3</td>
+        <td>2.32</td>
         </tr>
         
         <tr>
+        <td>21</td>
+        <td>VIPER</td>
+        <td class='pos'>13.80</td>
+        <td>21</td>
         <td>18</td>
+        <td>6</td>
+        <td class='penalty'>-4</td>
+        <td>2.30</td>
+        </tr>
+        
+        <tr>
+        <td>22</td>
+        <td>FATSA</td>
+        <td class='pos'>13.25</td>
+        <td>13</td>
+        <td>8</td>
+        <td>3</td>
+        <td class='penalty'>-3</td>
+        <td>4.42</td>
+        </tr>
+        
+        <tr>
+        <td>23</td>
+        <td>JDLAK</td>
+        <td class='pos'>11.60</td>
+        <td>10</td>
+        <td>6</td>
+        <td>2</td>
+        <td class='penalty'>0</td>
+        <td>5.80</td>
+        </tr>
+        
+        <tr>
+        <td>24</td>
+        <td>Reed</td>
+        <td class='pos'>11.20</td>
+        <td>12</td>
+        <td>7</td>
+        <td>3</td>
+        <td class='penalty'>0</td>
+        <td>3.73</td>
+        </tr>
+        
+        <tr>
+        <td>25</td>
         <td>MrZenor</td>
         <td class='pos'>10.20</td>
         <td>17</td>
@@ -324,18 +365,18 @@ select{
         </tr>
         
         <tr>
-        <td>19</td>
-        <td>KUDÜS FATİHİ</td>
-        <td class='pos'>9.70</td>
-        <td>10</td>
+        <td>26</td>
+        <td>gandalf</td>
+        <td class='pos'>9.90</td>
+        <td>18</td>
+        <td>16</td>
         <td>6</td>
-        <td>2</td>
-        <td class='penalty'>0</td>
-        <td>4.85</td>
+        <td class='penalty'>-8</td>
+        <td>1.65</td>
         </tr>
         
         <tr>
-        <td>20</td>
+        <td>27</td>
         <td>Alakazum</td>
         <td class='pos'>9.60</td>
         <td>12</td>
@@ -346,128 +387,62 @@ select{
         </tr>
         
         <tr>
-        <td>21</td>
-        <td>NamelessWarior</td>
-        <td class='pos'>9.50</td>
-        <td>16</td>
-        <td>14</td>
-        <td>5</td>
-        <td class='penalty'>-3</td>
-        <td>1.90</td>
-        </tr>
-        
-        <tr>
-        <td>22</td>
-        <td>VIPER</td>
-        <td class='pos'>9.40</td>
-        <td>16</td>
-        <td>15</td>
-        <td>5</td>
-        <td class='penalty'>-4</td>
-        <td>1.88</td>
-        </tr>
-        
-        <tr>
-        <td>23</td>
-        <td>sono</td>
-        <td class='pos'>9.10</td>
-        <td>12</td>
-        <td>8</td>
-        <td>3</td>
-        <td class='penalty'>0</td>
-        <td>3.03</td>
-        </tr>
-        
-        <tr>
-        <td>24</td>
-        <td>rüzgar</td>
-        <td class='pos'>8.90</td>
-        <td>8</td>
-        <td>6</td>
-        <td>2</td>
-        <td class='penalty'>0</td>
-        <td>4.45</td>
-        </tr>
-        
-        <tr>
-        <td>25</td>
-        <td>Büyükelçi_74</td>
-        <td class='pos'>8.50</td>
-        <td>20</td>
-        <td>15</td>
-        <td>5</td>
-        <td class='penalty'>-7</td>
-        <td>1.70</td>
-        </tr>
-        
-        <tr>
-        <td>26</td>
-        <td>FATSA</td>
-        <td class='pos'>8.25</td>
-        <td>9</td>
-        <td>6</td>
-        <td>2</td>
-        <td class='penalty'>-3</td>
-        <td>4.12</td>
-        </tr>
-        
-        <tr>
-        <td>27</td>
-        <td>Reed</td>
-        <td class='pos'>8.20</td>
-        <td>9</td>
-        <td>6</td>
-        <td>2</td>
-        <td class='penalty'>0</td>
-        <td>4.10</td>
-        </tr>
-        
-        <tr>
         <td>28</td>
-        <td>JDLAK</td>
-        <td class='pos'>4.70</td>
-        <td>4</td>
-        <td>3</td>
-        <td>1</td>
-        <td class='penalty'>0</td>
-        <td>4.70</td>
+        <td>Büyükelçi_74</td>
+        <td class='pos'>6.90</td>
+        <td>23</td>
+        <td>18</td>
+        <td>6</td>
+        <td class='penalty'>-11</td>
+        <td>1.15</td>
         </tr>
         
         <tr>
         <td>29</td>
-        <td>gandalf</td>
-        <td class='pos'>4.60</td>
-        <td>13</td>
+        <td>Aryan</td>
+        <td class='pos'>4.50</td>
         <td>15</td>
+        <td>12</td>
         <td>5</td>
         <td class='penalty'>-8</td>
-        <td>0.92</td>
+        <td>0.90</td>
         </tr>
         
         <tr>
         <td>30</td>
-        <td>imparator</td>
-        <td class='pos'>1.70</td>
+        <td>Elfishus</td>
+        <td class='pos'>2.85</td>
         <td>13</td>
-        <td>15</td>
+        <td>14</td>
         <td>5</td>
         <td class='penalty'>-8</td>
-        <td>0.34</td>
+        <td>0.57</td>
         </tr>
         
         <tr>
         <td>31</td>
-        <td>Aryan</td>
-        <td class='pos'>0.30</td>
-        <td>10</td>
-        <td>12</td>
-        <td>4</td>
+        <td>rüzgar</td>
+        <td class='pos'>0.90</td>
+        <td>8</td>
+        <td>6</td>
+        <td>3</td>
         <td class='penalty'>-8</td>
-        <td>0.07</td>
+        <td>0.30</td>
         </tr>
         
         <tr>
         <td>32</td>
+        <td>imparator</td>
+        <td class='neg'>-0.50</td>
+        <td>15</td>
+        <td>17</td>
+        <td>6</td>
+        <td class='penalty'>-12</td>
+        <td>-0.08</td>
+        </tr>
+        
+        <tr>
+        <td>33</td>
         <td>Orhanswelt</td>
         <td class='neg'>-1.00</td>
         <td>4</td>
@@ -475,17 +450,6 @@ select{
         <td>2</td>
         <td class='penalty'>-4</td>
         <td>-0.50</td>
-        </tr>
-        
-        <tr>
-        <td>33</td>
-        <td>Elfishus</td>
-        <td class='neg'>-1.15</td>
-        <td>9</td>
-        <td>11</td>
-        <td>4</td>
-        <td class='penalty'>-8</td>
-        <td>-0.29</td>
         </tr>
         
         <tr>
@@ -524,12 +488,12 @@ select{
         <tr>
         <td>37</td>
         <td>GRAYWOLF</td>
-        <td class='neg'>-8.00</td>
-        <td>0</td>
-        <td>3</td>
-        <td>1</td>
+        <td class='neg'>-4.40</td>
+        <td>4</td>
+        <td>6</td>
+        <td>2</td>
         <td class='penalty'>-8</td>
-        <td>-8.00</td>
+        <td>-2.20</td>
         </tr>
         
         <tr>
@@ -553,8 +517,1642 @@ select{
         <td class='penalty'>-8</td>
         <td>-8.00</td>
         </tr>
-        </table></div></div>
-</div>
+        </table></div><div class='card'><div class='war-title' onclick="toggleWar('war1_1')">1. Savaş Detayları</div><div id='war1_1' style='display:none;'>
+        <table>
+        <tr>
+        <th>Sıra</th>
+        <th>Oyuncu</th>
+        <th>Puan</th>
+        <th>Attığı</th>
+        <th>Yediği</th>
+        <th>Ceza</th>
+        </tr>
+        
+            <tr>
+            <td>1</td>
+            <td>*Phoboss*</td>
+            <td class='pos'>6.75</td>
+            <td>6</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>2</td>
+            <td>zıkkımheriff</td>
+            <td class='pos'>6.75</td>
+            <td>6</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>3</td>
+            <td>BasarACR</td>
+            <td class='pos'>6.25</td>
+            <td>5</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>4</td>
+            <td>KEOMA IZMIR</td>
+            <td class='pos'>6.00</td>
+            <td>6</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>5</td>
+            <td>Majestic</td>
+            <td class='pos'>6.00</td>
+            <td>6</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>6</td>
+            <td>***MAREŞAL***</td>
+            <td class='pos'>5.95</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>7</td>
+            <td>Tracham</td>
+            <td class='pos'>5.95</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>8</td>
+            <td>Samedov⚔️</td>
+            <td class='pos'>5.70</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>9</td>
+            <td>Exmilitary</td>
+            <td class='pos'>5.30</td>
+            <td>5</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>10</td>
+            <td>OnurKarabel</td>
+            <td class='pos'>5.00</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>11</td>
+            <td>legolas</td>
+            <td class='pos'>5.00</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>12</td>
+            <td>gandalf</td>
+            <td class='pos'>4.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>13</td>
+            <td>imparator</td>
+            <td class='pos'>4.70</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>14</td>
+            <td>MrZenor</td>
+            <td class='pos'>4.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>15</td>
+            <td>Büyükelçi_74</td>
+            <td class='pos'>4.50</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>16</td>
+            <td>KRAL43</td>
+            <td class='pos'>4.50</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>17</td>
+            <td>risk30</td>
+            <td class='pos'>3.80</td>
+            <td>4</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>18</td>
+            <td>Aryan</td>
+            <td class='pos'>3.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>19</td>
+            <td>VIPER</td>
+            <td class='pos'>3.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>20</td>
+            <td>The Onder</td>
+            <td class='pos'>3.80</td>
+            <td>4</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>21</td>
+            <td>Elfishus</td>
+            <td class='pos'>3.75</td>
+            <td>3</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>22</td>
+            <td>KONDU</td>
+            <td class='pos'>3.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>23</td>
+            <td>BurningBlood</td>
+            <td class='pos'>2.95</td>
+            <td>3</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>24</td>
+            <td>NamelessWarior</td>
+            <td class='pos'>1.00</td>
+            <td>2</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>25</td>
+            <td>blackknigt</td>
+            <td class='neg'>-2.00</td>
+            <td>0</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            </table></div></div><div class='card'><div class='war-title' onclick="toggleWar('war1_2')">2. Savaş Detayları</div><div id='war1_2' style='display:none;'>
+        <table>
+        <tr>
+        <th>Sıra</th>
+        <th>Oyuncu</th>
+        <th>Puan</th>
+        <th>Attığı</th>
+        <th>Yediği</th>
+        <th>Ceza</th>
+        </tr>
+        
+            <tr>
+            <td>1</td>
+            <td>Exmilitary</td>
+            <td class='pos'>5.50</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>2</td>
+            <td>gandalf</td>
+            <td class='pos'>5.30</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>3</td>
+            <td>blackknigt</td>
+            <td class='pos'>5.00</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>4</td>
+            <td>Majestic</td>
+            <td class='pos'>5.00</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>5</td>
+            <td>Tracham</td>
+            <td class='pos'>5.00</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>6</td>
+            <td>***MAREŞAL***</td>
+            <td class='pos'>4.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>7</td>
+            <td>JDLAK</td>
+            <td class='pos'>4.70</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>8</td>
+            <td>KEOMA IZMIR</td>
+            <td class='pos'>4.50</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>9</td>
+            <td>zıkkımheriff</td>
+            <td class='pos'>4.50</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>10</td>
+            <td>MrZenor</td>
+            <td class='pos'>4.30</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>11</td>
+            <td>*Phoboss*</td>
+            <td class='pos'>4.30</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>12</td>
+            <td>BurningBlood</td>
+            <td class='pos'>3.90</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>13</td>
+            <td>Aryan</td>
+            <td class='pos'>3.90</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>14</td>
+            <td>The Onder</td>
+            <td class='pos'>3.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>15</td>
+            <td>BasarACR</td>
+            <td class='pos'>3.75</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>16</td>
+            <td>Samedov⚔️</td>
+            <td class='pos'>3.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>17</td>
+            <td>legolas</td>
+            <td class='pos'>3.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>18</td>
+            <td>Büyükelçi_74</td>
+            <td class='pos'>3.20</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>19</td>
+            <td>KONDU</td>
+            <td class='pos'>3.20</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>20</td>
+            <td>OnurKarabel</td>
+            <td class='pos'>2.60</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>21</td>
+            <td>risk30</td>
+            <td class='pos'>2.40</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>22</td>
+            <td>KRAL43</td>
+            <td class='pos'>2.40</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>23</td>
+            <td>Alakazum</td>
+            <td class='pos'>2.40</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>24</td>
+            <td>VIPER</td>
+            <td class='pos'>2.40</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>25</td>
+            <td>imparator</td>
+            <td class='pos'>0.60</td>
+            <td>2</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>26</td>
+            <td>NamelessWarior</td>
+            <td class='pos'>0.60</td>
+            <td>2</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>27</td>
+            <td>N.K.G.</td>
+            <td class='neg'>-2.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>28</td>
+            <td>Elfishus</td>
+            <td class='neg'>-2.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>29</td>
+            <td>sono</td>
+            <td class='neg'>-2.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>30</td>
+            <td>A V C 1</td>
+            <td class='neg'>-2.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            </table></div></div><div class='card'><div class='war-title' onclick="toggleWar('war1_3')">3. Savaş Detayları</div><div id='war1_3' style='display:none;'>
+        <table>
+        <tr>
+        <th>Sıra</th>
+        <th>Oyuncu</th>
+        <th>Puan</th>
+        <th>Attığı</th>
+        <th>Yediği</th>
+        <th>Ceza</th>
+        </tr>
+        
+            <tr>
+            <td>1</td>
+            <td>blackknigt</td>
+            <td class='pos'>6.45</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>2</td>
+            <td>Tracham</td>
+            <td class='pos'>6.45</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>3</td>
+            <td>BasarACR</td>
+            <td class='pos'>6.05</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>4</td>
+            <td>Exmilitary</td>
+            <td class='pos'>6.00</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>5</td>
+            <td>zıkkımheriff</td>
+            <td class='pos'>6.00</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>6</td>
+            <td>Majestic</td>
+            <td class='pos'>5.70</td>
+            <td>6</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>7</td>
+            <td>sono</td>
+            <td class='pos'>5.70</td>
+            <td>6</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>8</td>
+            <td>Samedov⚔️</td>
+            <td class='pos'>5.70</td>
+            <td>6</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>9</td>
+            <td>The Onder</td>
+            <td class='pos'>5.50</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>10</td>
+            <td>Elfishus</td>
+            <td class='pos'>5.10</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>11</td>
+            <td>KEOMA IZMIR</td>
+            <td class='pos'>5.00</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>12</td>
+            <td>***MAREŞAL***</td>
+            <td class='pos'>5.00</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>13</td>
+            <td>MrZenor</td>
+            <td class='pos'>4.80</td>
+            <td>4</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>14</td>
+            <td>Alakazum</td>
+            <td class='pos'>4.80</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>15</td>
+            <td>*Phoboss*</td>
+            <td class='pos'>4.80</td>
+            <td>4</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>16</td>
+            <td>NamelessWarior</td>
+            <td class='pos'>4.70</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>17</td>
+            <td>BurningBlood</td>
+            <td class='pos'>4.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>18</td>
+            <td>legolas</td>
+            <td class='pos'>3.90</td>
+            <td>4</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>19</td>
+            <td>OnurKarabel</td>
+            <td class='pos'>3.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>20</td>
+            <td>KONDU</td>
+            <td class='pos'>3.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>21</td>
+            <td>KRAL43</td>
+            <td class='pos'>2.50</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>22</td>
+            <td>VIPER</td>
+            <td class='pos'>2.40</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>23</td>
+            <td>Büyükelçi_74</td>
+            <td class='pos'>1.40</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>24</td>
+            <td>risk30</td>
+            <td class='pos'>1.03</td>
+            <td>2</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>25</td>
+            <td>imparator</td>
+            <td class='pos'>0.80</td>
+            <td>2</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>26</td>
+            <td>Aryan</td>
+            <td class='pos'>0.60</td>
+            <td>2</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>27</td>
+            <td>Orhanswelt</td>
+            <td class='pos'>0.15</td>
+            <td>1</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>28</td>
+            <td>A V C 1</td>
+            <td class='neg'>-2.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>29</td>
+            <td>gandalf</td>
+            <td class='neg'>-2.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>30</td>
+            <td>Mavi</td>
+            <td class='neg'>-2.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            </table></div></div><div class='card'><div class='war-title' onclick="toggleWar('war1_4')">4. Savaş Detayları</div><div id='war1_4' style='display:none;'>
+        <table>
+        <tr>
+        <th>Sıra</th>
+        <th>Oyuncu</th>
+        <th>Puan</th>
+        <th>Attığı</th>
+        <th>Yediği</th>
+        <th>Ceza</th>
+        </tr>
+        
+            <tr>
+            <td>1</td>
+            <td>blackknigt</td>
+            <td class='pos'>6.00</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>2</td>
+            <td>zıkkımheriff</td>
+            <td class='pos'>6.00</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>3</td>
+            <td>KUDÜS FATİHİ</td>
+            <td class='pos'>4.70</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>4</td>
+            <td>Tracham</td>
+            <td class='pos'>4.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>5</td>
+            <td>Majestic</td>
+            <td class='pos'>4.50</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>6</td>
+            <td>MrZenor</td>
+            <td class='pos'>4.50</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>7</td>
+            <td>gandalf</td>
+            <td class='pos'>4.50</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>8</td>
+            <td>BasarACR</td>
+            <td class='pos'>4.30</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>9</td>
+            <td>rüzgar</td>
+            <td class='pos'>4.30</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>10</td>
+            <td>KRAL43</td>
+            <td class='pos'>4.00</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>11</td>
+            <td>Reed</td>
+            <td class='pos'>3.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>12</td>
+            <td>Exmilitary</td>
+            <td class='pos'>3.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>13</td>
+            <td>The Onder</td>
+            <td class='pos'>3.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>14</td>
+            <td>risk30</td>
+            <td class='pos'>3.20</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>-1</td>
+            </tr>
+            
+            <tr>
+            <td>15</td>
+            <td>OnurKarabel</td>
+            <td class='pos'>3.10</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>-1</td>
+            </tr>
+            
+            <tr>
+            <td>16</td>
+            <td>Samedov⚔️</td>
+            <td class='pos'>2.50</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>-3</td>
+            </tr>
+            
+            <tr>
+            <td>17</td>
+            <td>FATSA</td>
+            <td class='pos'>2.00</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>-3</td>
+            </tr>
+            
+            <tr>
+            <td>18</td>
+            <td>***MAREŞAL***</td>
+            <td class='pos'>1.88</td>
+            <td>2</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>19</td>
+            <td>KONDU</td>
+            <td class='pos'>1.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>-2</td>
+            </tr>
+            
+            <tr>
+            <td>20</td>
+            <td>NamelessWarior</td>
+            <td class='pos'>0.40</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>-3</td>
+            </tr>
+            
+            <tr>
+            <td>21</td>
+            <td>Orhanswelt</td>
+            <td class='neg'>-1.15</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>22</td>
+            <td>KEOMA IZMIR</td>
+            <td class='neg'>-1.50</td>
+            <td>2</td>
+            <td>3</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>23</td>
+            <td>BurningBlood</td>
+            <td class='neg'>-1.60</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>-6</td>
+            </tr>
+            
+            <tr>
+            <td>24</td>
+            <td>VIPER</td>
+            <td class='neg'>-1.60</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>25</td>
+            <td>imparator</td>
+            <td class='neg'>-2.20</td>
+            <td>2</td>
+            <td>3</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>26</td>
+            <td>Büyükelçi_74</td>
+            <td class='neg'>-3.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>-7</td>
+            </tr>
+            
+            <tr>
+            <td>27</td>
+            <td>*Phoboss*</td>
+            <td class='neg'>-3.85</td>
+            <td>1</td>
+            <td>3</td>
+            <td class='penalty'>-5</td>
+            </tr>
+            
+            <tr>
+            <td>28</td>
+            <td>Elfishus</td>
+            <td class='neg'>-8.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>-8</td>
+            </tr>
+            
+            <tr>
+            <td>29</td>
+            <td>Aryan</td>
+            <td class='neg'>-8.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>-8</td>
+            </tr>
+            
+            <tr>
+            <td>30</td>
+            <td>GRAYWOLF</td>
+            <td class='neg'>-8.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>-8</td>
+            </tr>
+            </table></div></div><div class='card'><div class='war-title' onclick="toggleWar('war1_5')">5. Savaş Detayları</div><div id='war1_5' style='display:none;'>
+        <table>
+        <tr>
+        <th>Sıra</th>
+        <th>Oyuncu</th>
+        <th>Puan</th>
+        <th>Attığı</th>
+        <th>Yediği</th>
+        <th>Ceza</th>
+        </tr>
+        
+            <tr>
+            <td>1</td>
+            <td>zıkkımheriff</td>
+            <td class='pos'>6.75</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>2</td>
+            <td>***MAREŞAL***</td>
+            <td class='pos'>6.25</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>3</td>
+            <td>FATSA</td>
+            <td class='pos'>6.25</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>4</td>
+            <td>sono</td>
+            <td class='pos'>5.40</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>5</td>
+            <td>Samedov⚔️</td>
+            <td class='pos'>5.40</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>6</td>
+            <td>*Phoboss*</td>
+            <td class='pos'>5.00</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>7</td>
+            <td>KUDÜS FATİHİ</td>
+            <td class='pos'>5.00</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>8</td>
+            <td>Exmilitary</td>
+            <td class='pos'>5.00</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>9</td>
+            <td>Tracham</td>
+            <td class='pos'>4.90</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>10</td>
+            <td>BasarACR</td>
+            <td class='pos'>4.80</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>11</td>
+            <td>Majestic</td>
+            <td class='pos'>4.70</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>12</td>
+            <td>rüzgar</td>
+            <td class='pos'>4.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>13</td>
+            <td>BurningBlood</td>
+            <td class='pos'>4.50</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>14</td>
+            <td>Reed</td>
+            <td class='pos'>4.40</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>15</td>
+            <td>KEOMA IZMIR</td>
+            <td class='pos'>4.25</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>16</td>
+            <td>blackknigt</td>
+            <td class='pos'>4.15</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>17</td>
+            <td>The Onder</td>
+            <td class='pos'>4.00</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>18</td>
+            <td>risk30</td>
+            <td class='pos'>3.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>19</td>
+            <td>KONDU</td>
+            <td class='pos'>3.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>20</td>
+            <td>Büyükelçi_74</td>
+            <td class='pos'>3.20</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>21</td>
+            <td>NamelessWarior</td>
+            <td class='pos'>2.80</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>22</td>
+            <td>Alakazum</td>
+            <td class='pos'>2.40</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>23</td>
+            <td>VIPER</td>
+            <td class='pos'>2.40</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>24</td>
+            <td>legolas</td>
+            <td class='neg'>-1.60</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>25</td>
+            <td>Mavi</td>
+            <td class='neg'>-2.00</td>
+            <td>2</td>
+            <td>3</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>26</td>
+            <td>imparator</td>
+            <td class='neg'>-2.20</td>
+            <td>2</td>
+            <td>3</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>27</td>
+            <td>MrZenor</td>
+            <td class='neg'>-8.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>-8</td>
+            </tr>
+            
+            <tr>
+            <td>28</td>
+            <td>S.Demir</td>
+            <td class='neg'>-8.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>-8</td>
+            </tr>
+            
+            <tr>
+            <td>29</td>
+            <td>Big Surprise</td>
+            <td class='neg'>-8.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>-8</td>
+            </tr>
+            
+            <tr>
+            <td>30</td>
+            <td>gandalf</td>
+            <td class='neg'>-8.00</td>
+            <td>0</td>
+            <td>3</td>
+            <td class='penalty'>-8</td>
+            </tr>
+            </table></div></div><div class='card'><div class='war-title' onclick="toggleWar('war1_6')">6. Savaş Detayları</div><div id='war1_6' style='display:none;'>
+        <table>
+        <tr>
+        <th>Sıra</th>
+        <th>Oyuncu</th>
+        <th>Puan</th>
+        <th>Attığı</th>
+        <th>Yediği</th>
+        <th>Ceza</th>
+        </tr>
+        
+            <tr>
+            <td>1</td>
+            <td>blackknigt</td>
+            <td class='pos'>7.50</td>
+            <td>6</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>2</td>
+            <td>JDLAK</td>
+            <td class='pos'>6.90</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>3</td>
+            <td>***MAREŞAL***</td>
+            <td class='pos'>6.75</td>
+            <td>6</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>4</td>
+            <td>zıkkımheriff</td>
+            <td class='pos'>6.75</td>
+            <td>6</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>5</td>
+            <td>Majestic</td>
+            <td class='pos'>5.70</td>
+            <td>6</td>
+            <td>1</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>6</td>
+            <td>Samedov⚔️</td>
+            <td class='pos'>5.70</td>
+            <td>6</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>7</td>
+            <td>risk30</td>
+            <td class='pos'>5.45</td>
+            <td>5</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>8</td>
+            <td>sono</td>
+            <td class='pos'>5.40</td>
+            <td>6</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>9</td>
+            <td>gandalf</td>
+            <td class='pos'>5.30</td>
+            <td>5</td>
+            <td>1</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>10</td>
+            <td>FATSA</td>
+            <td class='pos'>5.00</td>
+            <td>4</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>11</td>
+            <td>legolas</td>
+            <td class='pos'>5.00</td>
+            <td>5</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>12</td>
+            <td>Exmilitary</td>
+            <td class='pos'>5.00</td>
+            <td>5</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>13</td>
+            <td>BurningBlood</td>
+            <td class='pos'>4.70</td>
+            <td>5</td>
+            <td>2</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>14</td>
+            <td>KUDÜS FATİHİ</td>
+            <td class='pos'>4.70</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>15</td>
+            <td>NamelessWarior</td>
+            <td class='pos'>4.40</td>
+            <td>5</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>16</td>
+            <td>KONDU</td>
+            <td class='pos'>4.40</td>
+            <td>5</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>17</td>
+            <td>VIPER</td>
+            <td class='pos'>4.40</td>
+            <td>5</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>18</td>
+            <td>BasarACR</td>
+            <td class='pos'>4.30</td>
+            <td>4</td>
+            <td>1</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>19</td>
+            <td>Aryan</td>
+            <td class='pos'>4.20</td>
+            <td>5</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>20</td>
+            <td>Elfishus</td>
+            <td class='pos'>4.00</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>21</td>
+            <td>The Onder</td>
+            <td class='pos'>4.00</td>
+            <td>4</td>
+            <td>0</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>22</td>
+            <td>GRAYWOLF</td>
+            <td class='pos'>3.60</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>23</td>
+            <td>KRAL43</td>
+            <td class='pos'>3.30</td>
+            <td>4</td>
+            <td>3</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>24</td>
+            <td>Reed</td>
+            <td class='pos'>3.00</td>
+            <td>3</td>
+            <td>1</td>
+            <td class='penalty'>0</td>
+            </tr>
+            
+            <tr>
+            <td>25</td>
+            <td>*Phoboss*</td>
+            <td class='neg'>-0.55</td>
+            <td>3</td>
+            <td>0</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>26</td>
+            <td>KEOMA IZMIR</td>
+            <td class='neg'>-1.50</td>
+            <td>2</td>
+            <td>2</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>27</td>
+            <td>Büyükelçi_74</td>
+            <td class='neg'>-1.60</td>
+            <td>3</td>
+            <td>3</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>28</td>
+            <td>Tracham</td>
+            <td class='neg'>-1.70</td>
+            <td>2</td>
+            <td>2</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>29</td>
+            <td>imparator</td>
+            <td class='neg'>-2.20</td>
+            <td>2</td>
+            <td>2</td>
+            <td class='penalty'>-4</td>
+            </tr>
+            
+            <tr>
+            <td>30</td>
+            <td>rüzgar</td>
+            <td class='neg'>-8.00</td>
+            <td>0</td>
+            <td>0</td>
+            <td class='penalty'>-8</td>
+            </tr>
+            </table></div></div></div>
 <script>
 function openSeason(evt,id){
     document.querySelectorAll("[id^='season']").forEach(c=>c.style.display='none');
@@ -562,34 +2160,9 @@ function openSeason(evt,id){
     document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
     evt.currentTarget.classList.add("active");
 }
-
-function sortTable(th, columnIndex){
-    const table = th.closest("table");
-    const rows = Array.from(table.querySelectorAll("tr")).slice(1);
-    const isAsc = th.classList.contains("asc");
-
-    table.querySelectorAll("th").forEach(header=>{
-        header.classList.remove("asc","desc");
-    });
-
-    th.classList.toggle("asc", !isAsc);
-    th.classList.toggle("desc", isAsc);
-
-    rows.sort((a,b)=>{
-        let A = a.children[columnIndex].innerText.trim();
-        let B = b.children[columnIndex].innerText.trim();
-        let numA = parseFloat(A.replace(",","."));
-        let numB = parseFloat(B.replace(",","."));
-        if(!isNaN(numA) && !isNaN(numB)){
-            return isAsc ? numA - numB : numB - numA;
-        }
-        return isAsc ? A.localeCompare(B,"tr") : B.localeCompare(A,"tr");
-    });
-
-    rows.forEach((row,i)=>{
-        table.appendChild(row);
-        row.children[0].innerText = i+1;
-    });
+function toggleWar(id){
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === "none" ? "block" : "none";
 }
 </script>
 </body>
